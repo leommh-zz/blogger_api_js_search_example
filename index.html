@@ -1,62 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="blogger_api.js"></script>
+	<title>BLOGGER_API_JS_SEARCH_EXAMPLE</title>
 </head>
 <body>
 
-	<script type="text/javascript">
+	<div class="container">
+		
+		<p>BLOGGER API / SEARCH / EXAMPLE</p>
+		<p>------------------------------</p>
+		<p>CONFIGURAÇÕES DE USO:</p>
+		<p>DENTRO DO ARQUIVO blogger_api.js VOCÊ DEVERÁ EDITAR OS PARÂMETROS <B>BLOGID</B>, <B>APIKEY</B>, E O PARÂMETRO <B>SEARCH</B>.</p>
+		<p>APÓS ISSO É SÓ RECARREGAR A PÁGINA E ABRIR O CONSOLE DO SEU NAVEGADOR PARA VISUALIZAR O JSON RECEBIDO DA API.</p>
 
-			//Informações do blog
-			let blogId = "4144638092841813347";
-	        let apikey = "AIzaSyBFCobD_ONOzsZhzitrLKI1xKOZzzqK7x0";
-	        let results = "5";
-	        let search = "JAVA";
-
-	        let url = "https://www.googleapis.com/blogger/v3/blogs/"
-	                + blogId
-	                + "/posts?fetchBodies=false"
-	                + "&maxResults=" + results 
-	                + "&key=" + apikey;
-
-	        let url_search = "https://www.googleapis.com/blogger/v3/blogs/"
-	        			   + blogId
-	        			   + "/posts"
-	        			   + "/search?q=" + search
-	        			   + "&key=" + apikey;
-
-	        //recebe os valores da api http
-		    var xmlHttp = new XMLHttpRequest();
-		    xmlHttp.open( "GET", url, false ); // false for synchronous request
-		    xmlHttp.send( null );
-
-
-		    //trata estes valores
-		    let conteudo = JSON.parse(xmlHttp.responseText);
-		    let posts = conteudo.items;
-		    
-		    //consoles
-		    console.log('--------- POSTS ----------');
-		    console.log(posts);   
-		    console.log('---------------------------');
-
-		   	var xmlHttp2 = new XMLHttpRequest();
-		    xmlHttp2.open( "GET", url_search, false ); // false for synchronous request
-		    xmlHttp2.send( null );
-
-
-		    //trata estes valores
-		    let conteudo2 = JSON.parse(xmlHttp2.responseText);
-		    let posts2 = conteudo2.items;
-		    
-		    //consoles
-		    console.log('--------- POSTS_SEARCH: JAVA ----------');
-		    console.log(posts2);   
-		    console.log('---------------------------');
-
-
-
-	</script>
+	</div>
 
 </body>
 </html>
